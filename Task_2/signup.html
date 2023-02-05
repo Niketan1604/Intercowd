@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            background-image: linear-gradient(to top ,rgb(245, 8, 5,0),rgb(30, 42, 42),rgb(110,20,2));
+        }
+        .h_container{
+            font-family: itim;
+            text-align: center;
+            background-color: rgb(56, 53, 53);
+            padding:0.04px;
+            letter-spacing: 3px;
+            position: sticky;
+            top: 0;
+            color: white;
+        
+        }
+        
+        header{
+            position: sticky;
+            top: 0;
+        }
+        .h_container h1:hover{
+            cursor:default;
+        }
+        .container{
+            box-sizing: border-box;
+            margin: 10vw 25vw 15vw 25vw;
+            background-image: radial-gradient(farthest-side at 80% 80%,rgb(140, 154, 162),rgb(154, 120, 120));
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .links{
+            display:flex;
+            justify-content: space-around;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        
+        .links h2{
+            box-sizing: border-box;
+            padding: 1vw 8.5vw 1vw 8.5vw;
+            letter-spacing: 3px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to left, rgb(178, 151, 151) 50%, rgb(192, 205, 214) 50%) right;
+            background-size: 200%;
+            transition: .5s ease all;
+        }
+        
+        .links h2:hover{
+            box-shadow: 2px 2px 2px gray;
+            cursor: pointer;
+            background-position: left;
+        }
+        .signup{
+            margin-left: 11vw;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .signup input[type="text"],
+        .signup input[type="email"],
+        .signup input[type="number"],
+        .signup input[type="password"]{
+            padding: 5px;
+            width: 19vw;
+        }
+        
+        .signup input[type="submit"]{
+            margin: 5% 27% 5%;
+            font-size: large;
+            padding: 10px;
+            width: 5vw;
+            border-radius: 15px;
+            background-color: rgb(230, 202, 202);
+            border: none;
+        }
+        .p1{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            letter-spacing: 1px;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(255, 171, 171);
+            box-shadow: 1px 1px 1px grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+    <header>
+        <div class="h_container">
+            <h1>Interncrowd</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="links">
+                <h2 class="l1"><a href="/task2/index.html">Login</h2>
+                <h2 class="l2"><a href="/task2/signup.html">Signup</a></h2>
+            </div>
+            <div class="signup">
+                <p>
+                    Name :&nbsp;
+                    <input type="text" id="name" placeholder="enter your name">
+                </p>
+                <p>
+                    Gender :&nbsp;
+                    <label>
+                        <input type="radio" name="gender"> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender"> Female
+                    </label>
+                </p>
+                <p>
+                    Email id :&nbsp;
+                    <input type="email" id="email" placeholder="enter your email-id">
+                </p>
+                <p>
+                    Mobile No. :&nbsp;
+                    <input type="number" id="mobile" placeholder="enter your mobile number">
+                </p>
+                <br>
+                <p>
+                    Username :&nbsp;
+                    <input type="text" id="username">
+                </p>
+                <p>
+                    Password :&nbsp;
+                    <input type="password" placeholder="Password must contain only alphanumeric only">
+                </p>
+                <p>
+                    Password :&nbsp;
+                    <input type="password" id="pass" placeholder="re-enter your password">
+                </p>
+                <input type="submit" value="signup">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
