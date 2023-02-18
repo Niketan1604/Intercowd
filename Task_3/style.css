@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+}
+
+/* ---------------------header------------------------ */
+
+header h2{
+    letter-spacing: 1.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 38, 38);
+    color: antiquewhite;
+    position: sticky;
+    top: 0;
+}
+.navbar{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+
+}
+.navbar li{
+    padding: 10%;
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ------------------------------footer---------------------------------- */
+
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(40, 38, 38);
+    width: 100vw;
+    height: 10vh;
+}
+.quick-links,.social-media{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 15px;
+}
+.quick-links h3{
+    margin-top: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.social-media h3{
+    margin-top: 10px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+footer li{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    list-style: none;
+}
+.quick-links a,.social-media a{
+    color: white;
+    text-decoration: none;
+}
+.quick-links h3,.social-media h3{
+    text-align: center;
+    color: antiquewhite;
+}
+
+
+
+/* -----------------------------------main------------------------------ */
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 5fr 1fr;
+    height: 80vh;
+}
+.btns{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(247, 236, 226);
+}
+button{
+    width: 10vw;
+    height: 4vh;
+}
+.question_box{
+    padding-top: 10vh;
+    padding-left: 5vw;
+    background-color: rgb(249, 244, 239);
+}
+.q{
+    position: absolute;
+    font-size: large;
+    font-family: 'Segoe UI';
+    visibility: hidden;
+    word-spacing: 4px;
+}
+.q input{
+    margin: 10px;
+}
+#submit{
+    visibility: hidden;
+}
+
+.sidenavbar{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding-top: 10vh;
+    padding-left: 3vw;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    column-gap: 25px;
+    background-color: rgb(232, 235, 238);
+    grid-auto-columns: 1vh;
+    grid-auto-rows: 10vh;
+}
+span{
+    width: 40px;
+    height: 30px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+    background-color: black;
+}
+.numbers{
+    width: 40px;
+    clip-path: polygon(2% 3%, 98% 3%, 98% 68%, 50% 97%, 2% 68%);
+    border: none;
+    background-color: rgb(155, 158, 162);
+    color: white;
+}
+.numbers:hover{
+    background-color: rgb(137, 140, 143);
+}
+

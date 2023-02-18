@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- <link rel="stylesheet" href="/task3/style.css"> -->
+    <style>
+        body{
+            margin: 0;
+        }
+        
+        /* ---------------------header------------------------ */
+        
+        header h2{
+            letter-spacing: 1.5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: xx-large;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(40, 38, 38);
+            color: antiquewhite;
+            position: sticky;
+            top: 0;
+        }
+        .navbar{
+            list-style: none;
+            display:flex;
+            flex-direction: row;
+        
+        }
+        .navbar li{
+            padding: 10%;
+        }
+        
+        .navbar li a{
+            text-decoration: none;
+            color: white;
+        }
+        
+        
+        /* ------------------------------footer---------------------------------- */
+        
+        
+        footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            background-color: rgb(40, 38, 38);
+            width: 100vw;
+            height: 10vh;
+        }
+        .quick-links,.social-media{
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            column-gap: 15px;
+        }
+        .quick-links h3{
+            margin-top: 10px;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .social-media h3{
+            margin-top: 10px;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+        footer li{
+            grid-row-start: 2;
+            grid-row-end: 3;
+            list-style: none;
+        }
+        .quick-links a,.social-media a{
+            color: white;
+            text-decoration: none;
+        }
+        .quick-links h3,.social-media h3{
+            text-align: center;
+            color: antiquewhite;
+        }
+        
+        
+        
+        /* -----------------------------------main------------------------------ */
+        
+        main{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 5fr 1fr;
+            height: 80vh;
+        }
+        .btns{
+            grid-column-start: 2;
+            grid-row-start: 2;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(247, 236, 226);
+        }
+        button{
+            width: 10vw;
+            height: 4vh;
+        }
+        .question_box{
+            padding-top: 10vh;
+            padding-left: 5vw;
+            background-color: rgb(249, 244, 239);
+        }
+        .q{
+            position: absolute;
+            font-size: large;
+            font-family: 'Segoe UI';
+            visibility: hidden;
+            word-spacing: 4px;
+        }
+        .q input{
+            margin: 10px;
+        }
+        #submit{
+            visibility: hidden;
+        }
+        
+        .sidenavbar{
+            grid-row-start: 1;
+            grid-row-end: 3;
+            padding-top: 10vh;
+            padding-left: 3vw;
+            display: grid;
+            grid-template-columns: repeat(4,50px);
+            column-gap: 25px;
+            background-color: rgb(232, 235, 238);
+            grid-auto-columns: 1vh;
+            grid-auto-rows: 10vh;
+        }
+        span{
+            width: 40px;
+            height: 30px;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+            background-color: black;
+        }
+        .numbers{
+            width: 40px;
+            clip-path: polygon(2% 3%, 98% 3%, 98% 68%, 50% 97%, 2% 68%);
+            border: none;
+            background-color: rgb(155, 158, 162);
+            color: white;
+        }
+        .numbers:hover{
+            background-color: rgb(137, 140, 143);
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Interncrowd</h2>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="sidenavbar" id="sidenavbar">
+            <span><button class="numbers" onclick="jumpto(1)">1</button></span>
+            <span><button class="numbers" onclick="jumpto(2)">2</button></span>
+            <span><button class="numbers" onclick="jumpto(3)">3</button></span>
+            <span><button class="numbers" onclick="jumpto(4)">4</button></span>
+            <span><button class="numbers" onclick="jumpto(5)">5</button></span>
+            <span><button class="numbers" onclick="jumpto(6)">6</button></span>
+            <span><button class="numbers" onclick="jumpto(7)">7</button></span>
+            <span><button class="numbers" onclick="jumpto(8)">8</button></span>
+            <span><button class="numbers" onclick="jumpto(9)">9</button></span>
+            <span><button class="numbers" onclick="jumpto(10)">10</button></span>
+        </div>
+        <div class="question_box" id="question_box">
+            <div class="q1 q">
+                <p>Q1. Which of the following has introduced text, list, box, margin, border, color, and background
+                    properties?</p>
+                <label><input type="radio" name="q1" value="x">HTML </label><br>
+                <label><input type="radio" name="q1" value="x">PHP </label><br>
+                <label><input type="radio" name="q1" value="y">CSS </label><br>
+                <label><input type="radio" name="q1" value="x">Ajax </label><br>
+            </div>
+            <div class="q2 q">
+                <p>Q2. Which of the following CSS selectors are used to specify a group of elements?</p>
+                <label><input type="radio" name="q2" value="x">tag </label><br>
+                <label><input type="radio" name="q2" value="x">id </label><br>
+                <label><input type="radio" name="q2" value="y">class </label><br>
+                <label><input type="radio" name="q2" value="x">both class and tag </label><br>
+            </div>
+            <div class="q3 q">
+                <p>Q3. Which of the following CSS framework is used to create a responsive design?</p>
+                <label><input type="radio" name="q3" value="x">django </label><br>
+                <label><input type="radio" name="q3" value="x">rails </label><br>
+                <label><input type="radio" name="q3" value="x">larawell </label><br>
+                <label><input type="radio" name="q3" value="y">bootstrap </label><br>
+            </div>
+            <div class="q4 q">
+                <p>Q4. Which of the following function defines a linear gradient as a CSS image?</p>
+                <label><input type="radio" name="q4" value="x">gradient() </label><br>
+                <label><input type="radio" name="q4" value="y">linear-gradient() </label><br>
+                <label><input type="radio" name="q4" value="x">grayscale() </label><br>
+                <label><input type="radio" name="q4" value="x">image() </label><br>
+            </div>
+            <div class="q5 q">
+                <p>Q5. Which of the following is the correct way to apply CSS Styles?</p>
+                <label><input type="radio" name="q5" value="x">in an external CSS file </label><br>
+                <label><input type="radio" name="q5" value="x">inside an HTML element </label><br>
+                <label><input type="radio" name="q5" value="x">inside the &lt;head&gt; section of an HTML page </label><br>
+                <label><input type="radio" name="q5" value="y">all of the mentioned </label><br>
+            </div>
+            <div class="q6 q">
+                <p>Q6. Which of the following CSS property sets the font size of text?</p>
+                <label><input type="radio" name="q6" value="y">font-size </label><br>
+                <label><input type="radio" name="q6" value="x">text-size </label><br>
+                <label><input type="radio" name="q6" value="x">text </label><br>
+                <label><input type="radio" name="q6" value="x">size </label><br>
+            </div>
+            <div class="q7 q">
+                <p>Q7. Which of the following CSS property sets the shadow for a box element?</p>
+                <label><input type="radio" name="q7" value="x">set-shadow </label><br>
+                <label><input type="radio" name="q7" value="y">box-shadow </label><br>
+                <label><input type="radio" name="q7" value="x">shadow </label><br>
+                <label><input type="radio" name="q7" value="x">canvas-shadow </label><br>
+            </div>
+            <div class="q8 q">
+                <p>Q8. Which of the following CSS property is used to set the color of the text?</p>
+                <label><input type="radio" name="q8" value="x">text-decoration </label><br>
+                <label><input type="radio" name="q8" value="x">pallet </label><br>
+                <label><input type="radio" name="q8" value="x">colour </label><br>
+                <label><input type="radio" name="q8" value="y">color </label><br>
+            </div>
+            <div class="q9 q">
+                <p>Q9. Which of the following CSS Property controls how an element is positioned?</p>
+                <label><input type="radio" name="q9" value="x">static </label><br>
+                <label><input type="radio" name="q9" value="y">position </label><br>
+                <label><input type="radio" name="q9" value="x">fix </label><br>
+                <label><input type="radio" name="q9" value="x">set </label><br>
+            </div>
+            <div class="q10 q">
+                <p>Q10. Which of the following CSS property sets what kind of line decorations are added to an element,
+                    such as underlines, overlines, etc?</p>
+                <label><input type="radio" name="q10" value="y">text-decoration </label><br>
+                <label><input type="radio" name="q10" value="x">text-style </label><br>
+                <label><input type="radio" name="q10" value="x">text-decoration-line </label><br>
+                <label><input type="radio" name="q10" value="x">text-line </label><br>
+            </div>
+        </div>
+        <div class="btns" id="btns">
+            <button id="prev">previous</button>
+            <button id="next">next</button>
+            <button id="submit">submit</button>
+        </div>
+
+    </main>
+    <footer>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About&nbsp;Us</a></li>
+            <li><a href="#">Services</a></li>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+        </div>
+    </footer>
+    <script>
+        var count = 0;
+clicks();
+
+question_box.children[count].style.visibility = 'visible';
+prev.addEventListener('click', prevq);
+next.addEventListener('click', nextq);
+submit.addEventListener('click',submitq);
+document.addEventListener('click', clicks);
+
+function prevq() {
+    question_box.children[count].style.visibility = 'hidden';
+    count--;
+    question_box.children[count].style.visibility = 'visible';
+}
+
+
+function nextq() {
+    question_box.children[count].style.visibility = 'hidden';
+    count++;
+    question_box.children[count].style.visibility = 'visible';
+}
+
+function clicks() {
+    if (count >= 9) {
+        next.style.visibility = 'hidden'
+        submit.style.visibility = 'visible'
+    }
+    else {
+        next.style.visibility = 'visible'
+        submit.style.visibility = 'hidden'
+    }
+    if (count == 0) {
+        prev.style.visibility = 'hidden'
+    }
+    else {
+        prev.style.visibility = 'visible'
+    }
+}
+
+function submitq(){
+    let score=0;
+    let noanswer=0;
+    for(let i=1; i<=10; i++){
+        let v = '';
+        try{
+            v = document.querySelector("input[type='radio'][name='q"+i+"']:checked").value;
+        }
+        catch(Exception){
+            noanswer=1;
+            break;
+        }
+        
+        if(v=='y') score++;
+    }
+    if(noanswer==1) alert('Answer all the questions and then submit');
+    else{
+        btns.style.visibility="hidden";
+        question_box.style.visibility="hidden";
+        sidenavbar.style.visibility="hidden";
+
+        document.body.children[1].innerHTML = 
+        `        <div style="margin-top:20vh; margin-left:40vw">
+                 <h1 style="letter-spacing:2px; word-spacing:10px; font-family:'Segoe UI'">Your&nbsp;Score&nbsp;is&nbsp;:&nbsp;`+score+`/10 </h1>
+                 </div> ` 
+    }
+    
+}
+
+function jumpto(i){
+    question_box.children[count].style.visibility = 'hidden';
+    count=i-1;
+    question_box.children[count].style.visibility = 'visible';
+}
+    </script>
+    <!-- <script src="/task3/quiz.js"></script> -->
+</body>
+
+</html>
